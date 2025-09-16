@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NgClass } from "@angular/common";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet,RouterLink } from "@angular/router";
  
 @Component({
   selector: 'app-home',
   standalone: true,  
-  imports: [NgClass, RouterOutlet],
+  imports: [NgClass, RouterOutlet,RouterLink],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrls: ['./home.css']
 })
 export class Home {
   menuOpen = false;

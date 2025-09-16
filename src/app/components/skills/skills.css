@@ -1,0 +1,78 @@
+.skills {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #00fff7;
+  text-shadow: 0 0 12px #00fff7;
+  position: relative;
+  z-index: 1;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  row-gap: 60px;
+  column-gap: 60px;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.icon {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 60px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.skill-bar {
+  background: rgba(0,255,255,0.1);
+  border-radius: 10px;
+  height: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: #00fff7;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
