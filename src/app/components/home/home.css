@@ -1,33 +1,32 @@
 header {
-  font-family: 'Orbitron', sans-serif; /* tipografía futurista */
-  color: white;
+  font-family: 'Orbitron', sans-serif;
 }
 
 nav {
-  background: linear-gradient(135deg, #0b0a12ff, #090815ff, #1f1f4bff); /* degradado oscuro y moderno */
+  background: linear-gradient(135deg, #0b0a12, #090815, #1f1f4b);
   padding: 15px 40px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #00fff7;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  border-bottom: 2px solid #00fff7; /* línea neón */
+  z-index: 1000;
 }
 
 nav h1 {
   font-size: 28px;
-  color: #d3ceccff; /* color acento neón */
+  color: #d3cecc;
   margin: 0;
- }
+}
 
 nav ul {
   display: flex;
   list-style: none;
+  gap: 25px;
   margin: 0;
   padding: 0;
-  gap: 25px;
-  font-size: 20px;
-  z-index: 10;
+  z-index: 1000;
 }
 
 nav a {
@@ -65,6 +64,7 @@ nav a:hover::after {
   color: #00fff7;
   cursor: pointer;
   text-shadow: 0 0 8px #00fff7;
+  z-index: 2000;
 }
 
 /* Responsive */
@@ -72,16 +72,17 @@ nav a:hover::after {
   nav ul {
     display: none;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.85); /* fondo semi-transparente */
-    backdrop-filter: blur(8px); /* efecto glass */
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 55px; /* justo debajo del botón */
+    right: 15px;
     width: 220px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
     padding: 15px;
     gap: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    z-index: 2000;
   }
 
   nav ul.show {

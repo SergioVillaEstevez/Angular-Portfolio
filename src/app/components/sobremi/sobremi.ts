@@ -8,5 +8,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sobremi.css'
 })
 export class Sobremi {
+  foto: String = 'assets/foto.jpg';
 
 }

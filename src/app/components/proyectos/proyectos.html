@@ -1,1 +1,38 @@
-<p>proyectos works!</p>
+<section class="projects">
+  <h2>Mis Proyectos</h2>
+
+  <div class="project-grid">
+    @for (proyecto of proyectos; track proyecto.nombre) {
+      <div class="project-card">
+        <div class="project-icon"></div>
+
+        <h3>{{ proyecto.nombre }}</h3>
+        <p>{{ proyecto.descripcion }}</p>
+
+        <div class="tech-tags">
+          @for (tech of proyecto.tecnologias; track tech) {
+            <span class="tag">{{ tech }}</span>
+          }
+        </div>
+        
+        <!-- Botón para abrir galería -->
+        <button class="cta" (click)="abrirModal(proyecto.img, 0)">
+          Ver imágenes
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Modal con carrusel -->
+  @if (mostrarModal) {
+    <div class="modal" (click)="cerrarModal()">
+      <span class="cerrar" (click)="cerrarModal(); $event.stopPropagation()">&times;</span>
+
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="prev" (click)="prevImagen()">&#10094;</span>
+        <img [src]="imagenes[indiceActual]" alt="Imagen proyecto" />
+        <span class="next" (click)="nextImagen()">&#10095;</span>
+      </div>
+    </div>
+  }
+</section>

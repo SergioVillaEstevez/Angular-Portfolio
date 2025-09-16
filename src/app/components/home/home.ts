@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgClass } from "@angular/common";
 import { RouterOutlet,RouterLink } from "@angular/router";
  
@@ -16,5 +16,7 @@ export class Home {
     this.menuOpen = !this.menuOpen;
   
 }
+
+
 
 }

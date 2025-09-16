@@ -5,11 +5,12 @@ import { Sobremi } from './components/sobremi/sobremi';
 import { Proyectos } from './components/proyectos/proyectos';
 import { Skills } from './components/skills/skills';
 import { Contacto } from './components/contacto/contacto';
+import { Inicio } from "./components/inicio/inicio";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Home, Sobremi, Proyectos, Skills, Contacto],
+  imports: [Home],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

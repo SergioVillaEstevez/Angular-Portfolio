@@ -1,26 +1,25 @@
-
 <header>
-   
+  <nav>
+    <h1>Sergio Villa</h1>
 
-        <nav class="barra_navegacion">
-            
-            <h1>Sergio  Villa Estévez</h1>
-             <div class="menu-toggle" (click)="toggleMenu()">
-                ☰
-             </div>
-            <ul [ngClass] = "{'show': menuOpen}">
+    <!-- Botón hamburguesa -->
+    <div class="menu-toggle" (click)="menuOpen = !menuOpen">☰</div>
 
-                    <li><a routerLink="/inicio">Inicio</a></li>
-                    <li><a routerLink="/sobremi">Sobre mí</a></li>
-                    <li><a routerLink="/proyectos">proyectos</a></li>
-                    <li><a routerLink="/skills">skills</a></li>
-                    <li><a routerLink="/contacto">contacto</a></li>
-                    
-            </ul>
-
-        </nav>
+    <!-- Menú -->
+    <ul [ngClass]="{ 'show': menuOpen }">
+      <li><a routerLink="/inicio" (click)="menuOpen=false">Inicio</a></li>
+      <li><a routerLink="/sobremi" (click)="menuOpen=false">Sobre mí</a></li>
+      <li><a routerLink="/proyectos" (click)="menuOpen=false">Proyectos</a></li>
+      <li><a routerLink="/skills" (click)="menuOpen=false">Skills</a></li>
+      <li><a routerLink="/contacto" (click)="menuOpen=false">Contacto</a></li>
+    </ul>
+  </nav>
 </header>
 
 
+
+
 <router-outlet></router-outlet>
+
+
 
