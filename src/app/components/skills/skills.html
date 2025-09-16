@@ -5,12 +5,11 @@
   <div class="icons">
     <div class="icon">
         @for (skill of skills; track skill) {
-            
+           
+
                <img [src]="skill.icon" [alt]="skill.name" />
         
-        <div class="skill-bar">
-            <div class="skill-progress" [style.width]="skill.level + '%'"></div>
-        </div>
+     
         }
     </div>
 
@@ -29,4 +28,29 @@
     
   </div>
 </section>
+
+<section class="experience">
+  <h2>Mi Experiencia Detallada</h2>
+  <div class="experience-grid">
+    <div class="experience-card">
+        @for (lenguage of lenguages; track lenguage) {
+
+            
+
+            <img [src]="lenguage.icon" [alt]="lenguage.name">
+            <img [src]="lenguage.framework" alt="">
+            <h3>{{ lenguage.name }}</h3>
+            <p>Proyectos realizados: {{ lenguage.proyectos}}</p>
+            <p>Tiempo de experiencia: {{ lenguage.years }} años</p>
+            <p>Nivel: {{ lenguage.level }}</p>
+
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width]="lenguage.level + '%'"></div>
+            </div>
+         
+        }
+    </div>
+  </div>
+</section>
+
 

@@ -1,1 +1,36 @@
-<p>sobremi works!</p>
+<section class="about">
+  <h2>Sobre mí</h2>
+  <div class="about-container">
+    <div class="about-photo">
+      <img src="assets/foto.jpg" alt="Sergio Villa" />
+    </div>
+    <div class="about-text">
+      <h3>Hola, soy Sergio Villa Estévez</h3>
+      <p>
+        Soy desarrollador de aplicaciones multiplataforma con experiencia en 
+        Angular, React, Node.js y Java. Me apasiona crear soluciones eficientes 
+        y elegantes, y siempre estoy aprendiendo nuevas tecnologías para mejorar 
+        mis proyectos.
+      </p>
+
+      <h4>Especialidades:</h4>
+      <div class="tags">
+        <span class="tag">Angular</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+      </div>
+
+      <h4>Proyectos destacados:</h4>
+      <ul>
+        <li><strong>NeiverHub:</strong> Plataforma de foros y comunidades en Angular.</li>
+        <li><strong>Iko Adventure:</strong> Juego en Unity con página web informativa.</li>
+        <li><strong>App de Pádel:</strong> Gestión de ligas y jugadores con React Native.</li>
+      </ul>
+
+      <button class="cta" [routerLink]="'/proyectos'">Ver mis proyectos</button>
+    </div>
+  </div>
+</section>
+

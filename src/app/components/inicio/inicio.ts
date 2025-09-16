@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css'
 })
@@ -16,12 +17,6 @@ export class Inicio implements OnInit{
   private deleting : boolean = false;
 
 
-skills = [
-  { name: 'Angular', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
-  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-  { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' }
-];
 
 
 ngOnInit(): void {
@@ -100,10 +95,7 @@ private initStars() {
       setTimeout(()=>this.startTyping(),this.deleting?50: 150);
   }
 
-  scrollToProyects(){
-    const el = document.getElementById('projects');
-    if (el) el.scrollIntoView({behavior:'smooth'});
-  }
+  
 
 
 }

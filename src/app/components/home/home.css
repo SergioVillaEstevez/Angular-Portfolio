@@ -4,7 +4,7 @@ header {
 }
 
 nav {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* degradado oscuro y moderno */
+  background: linear-gradient(135deg, #0b0a12ff, #090815ff, #1f1f4bff); /* degradado oscuro y moderno */
   padding: 15px 40px;
   position: relative;
   display: flex;
