@@ -1,13 +1,15 @@
+/* Imagen de perfil */
 img {
   width: 200px;
   border-radius: 50%;
-  border: 2px solid #00fff7;
+  border: 2px solid #00bcd4; /* azul-cian más suave */
 }
 
+/* Sección Sobre mí */
 .about {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: #00fff7;
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+  color: #e0f7fa; /* color más claro y legible */
   font-family: 'Orbitron', monospace;
   text-align: center;
 }
@@ -15,8 +17,8 @@ img {
 .about h2 {
   font-size: 32px;
   margin-bottom: 40px;
-  color: #00fff7;
-  text-shadow: 0 0 12px #00fff7;
+  color: #00bcd4; /* azul-cian */
+  text-shadow: 0 0 8px #00bcd4;
 }
 
 .about-container {
@@ -30,18 +32,20 @@ img {
 .about-photo img {
   width: 200px;
   border-radius: 50%;
-  border: 2px solid #00fff7;
-  box-shadow: 0 0 15px #00fff7;
+  border: 2px solid #00bcd4;
+  box-shadow: 0 0 15px #00bcd4;
 }
 
 .about-text {
   max-width: 600px;
   text-align: left;
+  color: #b2ebf2;
 }
 
 .about-text h3 {
   font-size: 26px;
   margin-bottom: 15px;
+  color: #00bcd4;
 }
 
 .about-text p {
@@ -58,13 +62,13 @@ img {
 }
 
 .tag {
-  background: rgba(0, 255, 255, 0.1);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.3);
   border-radius: 8px;
   padding: 5px 10px;
   font-size: 14px;
-  color: #00fff7;
-  text-shadow: 0 0 5px #00fff7;
+  color: #00bcd4;
+  text-shadow: 0 0 3px #00bcd4;
 }
 
 .about-text ul {
@@ -75,29 +79,109 @@ img {
 .cta {
   padding: 12px 30px;
   font-size: 18px;
-  color: #00fff7;
-  border: 2px solid #00fff7;
+  color: #00bcd4;
+  border: 2px solid #00bcd4;
   background: transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px #00fff7;
+  text-shadow: 0 0 5px #00bcd4;
 }
 
 .cta:hover {
-  background: #00fff7;
+  background: #00bcd4;
   color: #000;
-  box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  box-shadow: 0 0 15px #00bcd4, 0 0 25px rgba(0,188,212,0.5);
+}
+
+/* Sección Experiencia */
+/* Contenedor Experiencia */
+.experience {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #111111);
+  color: #cfd8dc;
+  font-family: 'Orbitron', monospace;
+  text-align: center;
+}
+
+.experience h4 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #00bcd4; /* azul-cian */
+  text-shadow: 0 0 8px #00bcd4;
+}
+
+/* Grid de experiencia */
+.experience {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Tarjetas de trabajo */
+.job-card {
+  background: rgba(0, 188, 212, 0.05); /* fondo azul tenue */
+  border: 1px solid rgba(0, 188, 212, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00bcd4, 0 0 30px rgba(0,188,212,0.3);
+}
+
+/* Títulos de trabajo */
+.job-card h5 {
+  color: #00bcd4;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* Fecha y duración */
+.job-date {
+  display: block;
+  font-size: 14px;
+  color: #b0bec5;
+  margin-bottom: 5px;
+}
+
+/* Ubicación */
+.job-location {
+  display: block;
+  font-size: 14px;
+  color: #ff9800; /* naranja para destacar */
+  margin-bottom: 10px;
+}
+
+/* Lista de responsabilidades */
+.job-card ul {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.job-card ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #cfd8dc;
+}
+
+/* Aptitudes */
+.job-card p {
+  font-size: 14px;
+  color: #00bcd4;
+  text-shadow: 0 0 3px #00bcd4;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-text {
-    text-align: center;
+@media(max-width:768px) {
+  .experience {
+    grid-template-columns: 1fr;
   }
 }
+

@@ -29,6 +29,26 @@
         <li><strong>App de Pádel:</strong> Gestión de ligas y jugadores con React Native.</li>
       </ul>
 
+ <h4>Experiencia laboral:</h4>
+      <div class="experience">
+        @for (job of experiencia; track job) {
+          <div class="job-card">
+            <h5>{{ job.puesto }} – {{ job.empresa }}</h5>
+            <span class="job-date">{{ job.fecha }} · {{ job.duracion }}</span>
+            <span class="job-location">{{ job.ubicacion }}</span>
+            <ul>
+              @for (tarea of job.responsabilidades; track tarea) {
+                <li>{{ tarea }}</li>
+              }
+            </ul>
+            <p><strong>Aptitudes:</strong> {{ job.aptitudes.join(' · ') }}</p>
+          </div>
+        }
+      </div>
+
+
+
+
       <button class="cta" [routerLink]="'/proyectos'">Ver mis proyectos</button>
     </div>
   </div>

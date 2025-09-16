@@ -1,1 +1,92 @@
-<p>contacto works!</p>
+<section class="contact">
+  <h2>Contacto</h2>
+
+  <div class="contact-grid">
+    <!-- Tarjeta info -->
+    <div class="contact-card info">
+      <div class="info-row">
+        <div class="icon">📧</div>
+        <div>
+          <h4>Email</h4>
+          <p><a [href]="'mailto:' + contactEmail">{{ contactEmail }}</a></p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="icon">📍</div>
+        <div>
+          <h4>Madrid</h4>
+          <p>Madrid, España</p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="icon">💼</div>
+        <div>
+          <h4>LinkedIn / GitHub</h4>
+          <p>
+            <a href="https://www.linkedin.com/in/sergio-villa-est%C3%A9vez/" target="_blank" rel="noreferrer">LinkedIn</a> ·
+            <a href="https://github.com/SergioVillaEstevez" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="small">O usa el formulario y te responderé lo antes posible.</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="contact-card form">
+      <form [formGroup]="contactForm" (ngSubmit)="send()" novalidate>
+        <!-- Honeypot oculto -->
+        <input formControlName="hp" class="hp" autocomplete="off" tabindex="-1" />
+
+        <label>
+          Nombre
+          <input type="text" formControlName="name" placeholder="Tu nombre" />
+        </label>
+        @if (f['name'].touched && f['name'].invalid) {
+          <div class="error">Nombre obligatorio (mín 2 caracteres).</div>
+        }
+
+        <label>
+          Email
+          <input type="email" formControlName="email" placeholder="tu@ejemplo.com" />
+        </label>
+        @if (f['email'].touched && f['email'].invalid) {
+          <div class="error">Introduce un email válido.</div>
+        }
+
+        <label>
+          Asunto
+          <input type="text" formControlName="subject" placeholder="Asunto breve" />
+        </label>
+        @if (f['subject'].touched && f['subject'].invalid) {
+          <div class="error">Asunto obligatorio.</div>
+        }
+
+        <label>
+          Mensaje
+          <textarea formControlName="message" rows="6" placeholder="Escribe tu mensaje..."></textarea>
+        </label>
+        @if (f['message'].touched && f['message'].invalid) {
+          <div class="error">Mensaje mínimo 10 caracteres.</div>
+        }
+
+        <div class="actions">
+          <button type="submit" class="btn" [disabled]="sending">
+            @if (!sending) { <span>Enviar</span> }
+            @else { <span>Enviando…</span> }
+          </button>
+        </div>
+
+        @if (successMessage) {
+          <div class="result success">{{ successMessage }}</div>
+        }
+
+        @if (errorMessage) {
+          <div class="result error">{{ errorMessage }}</div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

@@ -118,58 +118,7 @@
   z-index: 1;
 }
 
-/* --- Skills --- */
-.skills {
-  padding: 60px 20px;
-  background: #1a1a1a;
-  color: white;
-  text-align: center;
-}
 
-.skills h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #00fff7;
-  text-shadow: 0 0 8px #00fff7;
-}
 
-.icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  justify-content: center;
-  row-gap: 60px;
-  column-gap: 60px;
-  padding: 40px 0;
-}
 
-.icon img {
-  width: 60px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
 
-.icon img:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #00fff7);
-}
-
-/* --- About --- */
-.about {
-  padding: 60px 20px;
-  background: #0f0f0f;
-  color: #00ffcc;
-  text-align: center;
-  font-family: 'Orbitron', monospace;
-}
-
-.about h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #00fff7;
-  text-shadow: 0 0 8px #00fff7;
-}
-
-.about p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 18px;
-}
