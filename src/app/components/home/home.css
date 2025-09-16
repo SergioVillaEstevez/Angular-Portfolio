@@ -1,0 +1,59 @@
+header{
+    color: white;
+}
+
+nav{
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+  position: relative; /* ancla el ul al nav */
+
+    
+}
+
+nav ul{
+
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin-right:20%;
+    padding: 0;
+    gap: 20px;
+    font-size: 27px;
+    
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+.menu-toggle {
+  display: none;
+  padding:20px;
+  gap:20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Cuando la pantalla es pequeña */
+
+@media (max-width:768px){
+
+    nav ul {
+        display:none;
+        flex-direction: column;
+        background: #1a1a1a;
+        position: absolute;
+        top:80px;
+        padding:5px;
+    }
+
+
+.menu-toggle{
+    display:block;
+}
+
+  nav ul.show {
+    display: flex; /* mostrar menú al pulsar */
+  }
+}
