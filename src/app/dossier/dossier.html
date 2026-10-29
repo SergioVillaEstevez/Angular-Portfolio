@@ -1,0 +1,265 @@
+<a class="skip" href="#portada">Saltar al contenido</a>
+
+<div class="marks" aria-hidden="true">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<header class="index">
+  <a class="brand" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+    <span class="brand-mark">SV</span>
+    Sergio Villa
+  </a>
+
+  <button
+    type="button"
+    class="menu-btn"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="indice"
+  >
+    Índice
+  </button>
+
+  <nav id="indice" [class.open]="menuOpen()" aria-label="Secciones">
+    @for (item of indice; track item.id) {
+      <a [routerLink]="'/' + item.id" routerLinkActive="is-active">
+        <span>{{ item.n }}</span> {{ item.label }}
+      </a>
+    }
+  </nav>
+</header>
+
+<main>
+  <section id="portada" class="portada">
+    <p class="kicker">
+      <span><i></i> Expediente 00</span>
+      <span>Madrid</span>
+    </p>
+
+    <h1 class="display">
+      <span>Sergio</span>
+      <span>Villa</span>
+      <span>Estévez</span>
+    </h1>
+
+    <div class="lede">
+      <p class="serif">{{ data.frase }}</p>
+      <p class="rol">{{ data.rol }}</p>
+    </div>
+
+    <figure class="portrait">
+      <img [src]="data.foto" [alt]="data.nombre" />
+      <figcaption class="stamp">Madrid</figcaption>
+    </figure>
+
+    <nav class="contents" aria-label="Contenido del expediente">
+      @for (item of indice; track item.id) {
+        <a [routerLink]="'/' + item.id">
+          <small>{{ item.n }}</small>
+          <strong>{{ item.label }}</strong>
+        </a>
+      }
+    </nav>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      @for (copia of [0, 1]; track copia) {
+        <p>
+          @for (material of data.materiales; track material) {
+            <span>{{ material }}</span>
+          }
+        </p>
+      }
+    </div>
+  </div>
+
+  <section id="identidad" class="sheet">
+    <p class="ghost" aria-hidden="true">01</p>
+    <header class="section-head">
+      <p class="kicker"><span><i></i> 01 — Identidad</span></p>
+      <h2>Quién construye</h2>
+    </header>
+
+    <p class="manifesto">{{ data.manifiesto }}</p>
+
+    <p class="materials">
+      @for (material of data.materiales; track material; let last = $last) {
+        <span>{{ material }}</span>@if (!last) {<span class="slash" aria-hidden="true"> / </span>}
+      }
+    </p>
+
+    <div class="jobs">
+      @for (job of data.experiencia; track job.empresa) {
+        <article class="job">
+          <header>
+            <h3>{{ job.puesto }}</h3>
+            <p>{{ job.empresa }}</p>
+            <p>{{ job.fecha }}</p>
+            <p class="lugar">{{ job.lugar }}</p>
+          </header>
+          <div>
+            <ul>
+              @for (tarea of job.tareas; track tarea) {
+                <li>{{ tarea }}</li>
+              }
+            </ul>
+            <p class="aptitudes">{{ job.aptitudes.join(' · ') }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="obra" class="sheet sheet-ink">
+    <p class="ghost" aria-hidden="true">02</p>
+    <header class="section-head">
+      <p class="kicker"><span><i></i> 02 — Obra</span></p>
+      <h2>Cuatro piezas</h2>
+    </header>
+    <p class="note">Lo que ya está construido. El código, cuando existe, está al lado. El corte abre las capturas.</p>
+
+    <div class="works">
+      @for (pieza of data.obra; track pieza.id) {
+        <article class="work" [class.is-open]="obraAbierta() === pieza.id">
+          <div class="work-top">
+            <p class="work-index">{{ pieza.indice }}</p>
+            <div>
+              <h3>{{ pieza.nombre }}</h3>
+              <p>{{ pieza.descripcion }}</p>
+              <p class="tech">{{ pieza.tecnologias.join(' / ') }}</p>
+            </div>
+            <div class="work-actions">
+              @if (pieza.enlace) {
+                <a class="text-link" [href]="pieza.enlace" target="_blank" rel="noopener noreferrer">Código</a>
+              } @else {
+                <span class="muted">Sin repo</span>
+              }
+              @if (pieza.imagenes.length) {
+                <button type="button" (click)="toggleObra(pieza.id)" [attr.aria-expanded]="obraAbierta() === pieza.id">
+                  {{ obraAbierta() === pieza.id ? 'Cerrar' : 'Corte' }}
+                </button>
+              }
+            </div>
+          </div>
+
+          @if (obraAbierta() === pieza.id) {
+            <div class="strip">
+              @for (corte of pieza.imagenes; track corte.src; let i = $index) {
+                <button type="button" (click)="abrirFoto(pieza.imagenes, i)">
+                  <img [src]="corte.src" [alt]="corte.alt" />
+                </button>
+              }
+            </div>
+          }
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="oficio" class="sheet">
+    <p class="ghost" aria-hidden="true">03</p>
+    <header class="section-head">
+      <p class="kicker"><span><i></i> 03 — Oficio</span></p>
+      <h2>Con qué trabajo</h2>
+    </header>
+    <p class="note">Escala propia, de 0 a 100. Un año de uso real, no de certificado.</p>
+
+    <div class="skills">
+      @for (item of data.oficio; track item.nombre) {
+        <article class="skill">
+          <div class="skill-name">
+            <h3>{{ item.nombre }}</h3>
+            <p>{{ item.uso }}</p>
+          </div>
+          <p class="skill-meta">{{ anos(item.anos) }}</p>
+          <p class="skill-level">{{ item.nivel }}</p>
+          <div class="bar" role="img" [attr.aria-label]="item.nombre + ', nivel ' + item.nivel">
+            <span [style.width.%]="item.nivel"></span>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="contacto" class="sheet">
+    <p class="ghost" aria-hidden="true">04</p>
+    <header class="section-head">
+      <p class="kicker"><span><i></i> 04 — Contacto</span></p>
+      <h2>Escríbeme</h2>
+    </header>
+
+    <div class="contact">
+      <div>
+        <a class="mail" [href]="'mailto:' + data.email">{{ data.email }}</a>
+        <ul class="direct">
+          <li>{{ data.ciudad }}, España</li>
+          <li><a [href]="data.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a [href]="data.github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+        <input formControlName="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <label>
+          Nombre
+          <input type="text" formControlName="name" autocomplete="name" />
+        </label>
+        @if (form.controls.name.touched && form.controls.name.invalid) {
+          <p class="error">Nombre, mínimo 2 caracteres.</p>
+        }
+
+        <label>
+          Email
+          <input type="email" formControlName="email" autocomplete="email" />
+        </label>
+        @if (form.controls.email.touched && form.controls.email.invalid) {
+          <p class="error">Hace falta un email válido.</p>
+        }
+
+        <label>
+          Asunto
+          <input type="text" formControlName="subject" />
+        </label>
+        @if (form.controls.subject.touched && form.controls.subject.invalid) {
+          <p class="error">Asunto, mínimo 3 caracteres.</p>
+        }
+
+        <label>
+          Mensaje
+          <textarea formControlName="message" rows="5"></textarea>
+        </label>
+        @if (form.controls.message.touched && form.controls.message.invalid) {
+          <p class="error">Mensaje, mínimo 10 caracteres.</p>
+        }
+
+        <button class="send" type="submit">Enviar</button>
+        @if (enviado()) {
+          <p class="sent">Se abrió tu cliente de correo con el mensaje.</p>
+        }
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="colophon">
+  <p>{{ data.nombre }}</p>
+  <p>{{ data.ciudad }}</p>
+  <p>Hecho en Angular</p>
+</footer>
+
+@if (foto(); as actual) {
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Captura del proyecto" (click)="cerrarFoto()">
+    <div class="lightbox-bar">
+      <button type="button" (click)="moverFoto(-1); $event.stopPropagation()">Anterior</button>
+      <button type="button" (click)="cerrarFoto()">Cerrar</button>
+      <button type="button" (click)="moverFoto(1); $event.stopPropagation()">Siguiente</button>
+    </div>
+    <img
+      [src]="actual.cortes[actual.index].src"
+      [alt]="actual.cortes[actual.index].alt"
+      (click)="$event.stopPropagation()"
+    />
+  </div>
+}
