@@ -1,14 +1,19 @@
 <a class="skip" href="#portada">Saltar al contenido</a>
 
+<div class="flip-stage" [class.is-fixed]="turning() || retro()" [class.is-flipped]="retro()">
+  <div class="flip-card">
+    <div class="flip-face flip-front" [attr.inert]="retro() || turning() ? '' : null">
+
 <div class="marks" aria-hidden="true">
   <span></span><span></span><span></span><span></span>
 </div>
 
 <header class="index">
-  <a class="brand" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+  <button type="button" class="brand" (click)="voltear()" [attr.aria-pressed]="retro()" aria-label="Dar la vuelta al sitio">
     <span class="brand-mark">SV</span>
-    Sergio Villa
-  </a>
+    <span>Sergio Villa</span>
+    <span class="brand-hint">voltear</span>
+  </button>
 
   <button
     type="button"
@@ -248,6 +253,121 @@
   <p>{{ data.ciudad }}</p>
   <p>Hecho en Angular</p>
 </footer>
+
+    </div>
+
+    <div class="flip-face flip-back" [attr.inert]="retro() ? null : ''">
+      <div class="tube">
+        <div class="tube-scan" aria-hidden="true"></div>
+        <header class="tube-bar">
+          <button type="button" class="tube-brand" (click)="voltear()">
+            <span>SV</span>
+            Sergio Villa
+          </button>
+          <p>Cara B · Tubo</p>
+          <button type="button" class="tube-back" (click)="voltear()">Volver</button>
+        </header>
+
+        <div class="tube-scroll">
+          <section class="tube-hero">
+            <p class="tube-kicker">C:\MADRID\SERGIO&gt; run expediente</p>
+            <h2 class="tube-name">
+              <span>Sergio</span>
+              <span>Villa</span>
+              <span>Estévez</span>
+            </h2>
+            <div class="tube-lead">
+              <p class="tube-role">{{ data.rol }}<span class="blink">_</span></p>
+              <p class="tube-frase">{{ data.frase }}</p>
+            </div>
+            <figure class="tube-photo">
+              <img [src]="data.foto" [alt]="data.nombre" />
+              <figcaption>FIG.01 / MADRID</figcaption>
+            </figure>
+          </section>
+
+          <section class="tube-block" id="tube-identidad">
+            <h3>01 Identidad</h3>
+            <p class="tube-copy">{{ data.manifiesto }}</p>
+            @for (job of data.experiencia; track job.empresa) {
+              <article class="tube-log">
+                <p class="tube-log-title">{{ job.puesto }}</p>
+                <p>{{ job.empresa }} · {{ job.fecha }}</p>
+                <p>{{ job.lugar }}</p>
+              </article>
+            }
+          </section>
+
+          <section class="tube-block" id="tube-obra">
+            <h3>02 Obra</h3>
+            <p class="tube-kicker">DIR C:\OBRA</p>
+            @for (pieza of data.obra; track pieza.id) {
+              <article class="tube-file" [class.is-open]="tuboAbierto() === pieza.id">
+                <div class="tube-file-top">
+                  <p class="tube-index">{{ pieza.indice }}</p>
+                  <div>
+                    <h4>{{ pieza.nombre }}</h4>
+                    <p>{{ pieza.descripcion }}</p>
+                    <p class="tube-tech">{{ pieza.tecnologias.join(' / ') }}</p>
+                  </div>
+                  <div class="tube-file-actions">
+                    @if (pieza.enlace) {
+                      <a [href]="pieza.enlace" target="_blank" rel="noopener noreferrer">Código</a>
+                    } @else {
+                      <span>Sin repo</span>
+                    }
+                    @if (pieza.imagenes.length) {
+                      <button type="button" (click)="toggleTubo(pieza.id)">
+                        {{ tuboAbierto() === pieza.id ? 'Cerrar' : 'Ver' }}
+                      </button>
+                    }
+                  </div>
+                </div>
+                @if (tuboAbierto() === pieza.id) {
+                  <div class="tube-strip">
+                    @for (corte of pieza.imagenes; track corte.src; let i = $index) {
+                      <button type="button" (click)="abrirFoto(pieza.imagenes, i)">
+                        <img [src]="corte.src" [alt]="corte.alt" />
+                      </button>
+                    }
+                  </div>
+                }
+              </article>
+            }
+          </section>
+
+          <section class="tube-block" id="tube-oficio">
+            <h3>03 Oficio</h3>
+            @for (item of data.oficio; track item.nombre) {
+              <div class="tube-skill">
+                <p>{{ item.nombre }}</p>
+                <div class="tube-meter" role="img" [attr.aria-label]="item.nombre + ' ' + item.nivel">
+                  <span [style.width.%]="item.nivel"></span>
+                </div>
+                <p>{{ item.nivel }}</p>
+              </div>
+            }
+          </section>
+
+          <section class="tube-block" id="tube-contacto">
+            <h3>04 Contacto</h3>
+            <a class="tube-mail" [href]="'mailto:' + data.email">{{ data.email }}</a>
+            <p class="tube-links">
+              <a [href]="data.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a [href]="data.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+          </section>
+        </div>
+
+        <footer class="tube-status">
+          <span>READY</span>
+          <span>{{ data.ciudad }}</span>
+          <span>CARA B</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
 
 @if (foto(); as actual) {
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Captura del proyecto" (click)="cerrarFoto()">
