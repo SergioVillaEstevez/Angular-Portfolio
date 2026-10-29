@@ -40,6 +40,7 @@ export const dossier = {
   linkedin: 'https://www.linkedin.com/in/sergio-villa-est%C3%A9vez/',
   github: 'https://github.com/SergioVillaEstevez',
   foto: 'assets/foto.jpg',
+  fotoPixel: 'assets/sergio-pixel.png',
   frase: 'Software para el móvil, el navegador y el servidor.',
   manifiesto:
     'Construyo aplicaciones que tienen que funcionar fuera del prototipo. Angular, React, Node.js, Java y Spring Boot son las herramientas con las que cierro el ciclo: interfaz, lógica y datos.',

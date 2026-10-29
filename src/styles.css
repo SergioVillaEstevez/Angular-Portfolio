@@ -1188,15 +1188,17 @@ body.is-tube {
   align-self: start;
   margin: 0;
   justify-self: end;
+  width: min(240px, 100%);
 }
 
 .tube-photo img {
   display: block;
-  width: min(240px, 100%);
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center 18%;
-  filter: grayscale(1) contrast(1.45);
+  object-position: center;
+  image-rendering: pixelated;
+  background: #100e0a;
   border: 3px solid #ffc44d;
   box-shadow: 8px 8px 0 #ff2bd6;
 }
@@ -1383,7 +1385,7 @@ body.is-tube {
     padding: 7px 8px;
   }
 
-  .tube-photo img {
+  .tube-photo {
     width: min(220px, 72vw);
   }
 }
