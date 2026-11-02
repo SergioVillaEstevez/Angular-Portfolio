@@ -10,6 +10,7 @@ export interface Obra {
   descripcion: string;
   tecnologias: string[];
   enlace: string | null;
+  demo?: string | null;
   imagenes: Corte[];
 }
 
@@ -114,8 +115,23 @@ export const dossier = {
       ],
     },
     {
-      id: 'api',
+      id: 'helpdesk',
       indice: '04',
+      nombre: 'Helpdesk Pro',
+      descripcion: 'Mesa de soporte multi-empresa en Angular. Tickets, calendario y fichaje.',
+      tecnologias: ['Angular'],
+      enlace: null,
+      demo: 'https://helpdesk-pro-hybrid.netlify.app',
+      imagenes: [
+        { src: 'assets/helpdesk_centro.jpg', alt: 'Centro de operaciones de Helpdesk Pro' },
+        { src: 'assets/helpdesk_tickets.jpg', alt: 'Cola de tickets abiertos de Helpdesk Pro' },
+        { src: 'assets/helpdesk_calendario.jpg', alt: 'Calendario del equipo en Helpdesk Pro' },
+        { src: 'assets/helpdesk_fichaje.jpg', alt: 'Fichaje de la jornada en Helpdesk Pro' },
+      ],
+    },
+    {
+      id: 'api',
+      indice: '05',
       nombre: 'API REST',
       descripcion: 'API en Java con Spring Boot.',
       tecnologias: ['Java', 'Spring Boot'],

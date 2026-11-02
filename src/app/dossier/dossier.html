@@ -120,7 +120,7 @@
     <p class="ghost" aria-hidden="true">02</p>
     <header class="section-head">
       <p class="kicker"><span><i></i> 02 — Obra</span></p>
-      <h2>Cuatro piezas</h2>
+      <h2>Cinco piezas</h2>
     </header>
     <p class="note">Lo que ya está construido. El código, cuando existe, está al lado. El corte abre las capturas.</p>
 
@@ -137,7 +137,11 @@
             <div class="work-actions">
               @if (pieza.enlace) {
                 <a class="text-link" [href]="pieza.enlace" target="_blank" rel="noopener noreferrer">Código</a>
-              } @else {
+              }
+              @if (pieza.demo) {
+                <a class="text-link" [href]="pieza.demo" target="_blank" rel="noopener noreferrer">Demo</a>
+              }
+              @if (!pieza.enlace && !pieza.demo) {
                 <span class="muted">Sin repo</span>
               }
               @if (pieza.imagenes.length) {
@@ -313,7 +317,11 @@
                   <div class="tube-file-actions">
                     @if (pieza.enlace) {
                       <a [href]="pieza.enlace" target="_blank" rel="noopener noreferrer">Código</a>
-                    } @else {
+                    }
+                    @if (pieza.demo) {
+                      <a [href]="pieza.demo" target="_blank" rel="noopener noreferrer">Demo</a>
+                    }
+                    @if (!pieza.enlace && !pieza.demo) {
                       <span>Sin repo</span>
                     }
                     @if (pieza.imagenes.length) {
