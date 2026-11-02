@@ -115,8 +115,23 @@ export const dossier = {
       ],
     },
     {
-      id: 'helpdesk',
+      id: 'kio',
       indice: '04',
+      nombre: 'Kio-Metroid',
+      descripcion: 'Caverna por salas de Kio Adventure, en el navegador. Portales, refugio y ruinas.',
+      tecnologias: ['Angular', 'Phaser'],
+      enlace: null,
+      demo: 'https://kio-adventure.netlify.app',
+      imagenes: [
+        { src: 'assets/kio_entrada.jpg', alt: 'Entrada de la caverna en Kio-Metroid' },
+        { src: 'assets/kio_refugio.jpg', alt: 'Plaza del refugio en Kio-Metroid' },
+        { src: 'assets/kio_ruinas.jpg', alt: 'Sala de las ruinas en Kio-Metroid' },
+        { src: 'assets/kio_bosque.jpg', alt: 'Despertar en el bosque en Kio-Metroid' },
+      ],
+    },
+    {
+      id: 'helpdesk',
+      indice: '05',
       nombre: 'Helpdesk Pro',
       descripcion: 'Mesa de soporte multi-empresa en Angular. Tickets, calendario y fichaje.',
       tecnologias: ['Angular'],
@@ -131,7 +146,7 @@ export const dossier = {
     },
     {
       id: 'api',
-      indice: '05',
+      indice: '06',
       nombre: 'API REST',
       descripcion: 'API en Java con Spring Boot.',
       tecnologias: ['Java', 'Spring Boot'],
