@@ -91,14 +91,16 @@ export const dossier = {
     {
       id: 'padel',
       indice: '02',
-      nombre: 'Pádel',
-      descripcion: 'App en React Native para ligas y jugadores de pádel.',
-      tecnologias: ['React Native'],
-      enlace: 'https://github.com/SergioVillaEstevez/AppPadel',
+      nombre: 'Padeleague',
+      descripcion: 'Liga fantasy de pádel. Pareja, mercado de cláusulas y clasificación.',
+      tecnologias: ['React Native', 'Expo'],
+      enlace: null,
+      demo: 'https://padeleague.netlify.app',
       imagenes: [
-        { src: 'assets/padel_sesion.png', alt: 'Inicio de sesión de la app de pádel' },
-        { src: 'assets/padel_inicio.png', alt: 'Inicio de la app de pádel' },
-        { src: 'assets/padel_menu.png', alt: 'Menú de la app de pádel' },
+        { src: 'assets/padel_entrada.jpg', alt: 'Entrada de Padeleague, con la pista y el acceso a la liga' },
+        { src: 'assets/padel_mercado.jpg', alt: 'Mercado de fichas de Padeleague' },
+        { src: 'assets/padel_clasificacion.jpg', alt: 'Clasificación de la liga en Padeleague' },
+        { src: 'assets/padel_calendario.jpg', alt: 'Calendario de parejas en Padeleague' },
       ],
     },
     {
