@@ -1,0 +1,202 @@
+export interface Corte {
+  src: string;
+  alt: string;
+}
+
+export interface Obra {
+  id: string;
+  indice: string;
+  nombre: string;
+  descripcion: string;
+  tecnologias: string[];
+  enlace: string | null;
+  demo?: string | null;
+  imagenes: Corte[];
+}
+
+export interface Oficio {
+  nombre: string;
+  nivel: number;
+  uso: string;
+  anos: number;
+}
+
+export interface Experiencia {
+  puesto: string;
+  empresa: string;
+  fecha: string;
+  lugar: string;
+  tareas: string[];
+  aptitudes: string[];
+}
+
+export const secciones = ['identidad', 'obra', 'oficio', 'contacto'] as const;
+export type Seccion = (typeof secciones)[number];
+
+export const dossier = {
+  nombre: 'Sergio Villa Estévez',
+  rol: 'Automatización e integración',
+  ciudad: 'Madrid',
+  email: 'sergiovillaestevez@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/sergio-villa-est%C3%A9vez/',
+  github: 'https://github.com/SergioVillaEstevez',
+  foto: 'assets/foto.jpg',
+  fotoPixel: 'assets/sergio-pixel.png',
+  frase: 'Software para el móvil, el navegador y el servidor.',
+  manifiesto:
+    'Construyo aplicaciones que tienen que funcionar fuera del prototipo. Angular, React, Node.js, Java y Spring Boot son las herramientas con las que cierro el ciclo: interfaz, lógica y datos.',
+  materiales: ['Angular', 'React', 'Node.js', 'Java', 'Spring Boot', 'Kotlin', 'C#', 'Unity'],
+  experiencia: [
+    {
+      puesto: 'Automatización e integración',
+      empresa: 'Sermicro',
+      fecha: 'nov. 2025 — actualidad · 1 año',
+      lugar: 'Madrid',
+      tareas: [
+        'IA local en producción, con Ollama y n8n.',
+        'Automatizaciones que parten de un parámetro, consultan una web y se quedan solo con el dato útil.',
+        'Flujo de correos en .NET: estado en base de datos, respuesta por SMTP y acceso con OAuth2 en Azure.',
+        'Agente para procesos internos. Lógica, herramientas externas y llamadas a APIs.',
+      ],
+      aptitudes: ['Ollama', 'n8n', '.NET', 'PowerShell', 'Azure'],
+    },
+    {
+      puesto: 'Node.js Developer — AI Data Analyst',
+      empresa: 're-inventa',
+      fecha: 'may. 2025 — sept. 2025 · 4 meses',
+      lugar: 'Madrid',
+      tareas: [
+        'Utilidades en Node.js para generar y transformar archivos de datos usados en la validación y el entrenamiento de modelos.',
+        'Prompts para modelos de lenguaje, enfocados en detectar respuestas afirmativas y negativas en conversaciones transcritas.',
+        'Métricas de falsos positivos, falsos negativos y precisión con scripts en RStudio.',
+        'Lectura de resultados con el equipo técnico para ajustar los modelos según la calidad de las predicciones.',
+      ],
+      aptitudes: ['R', 'Node.js', 'JavaScript'],
+    },
+    {
+      puesto: 'Técnico informático — Desarrollo web y SEO',
+      empresa: 'PCBOX · KLF Informática',
+      fecha: 'may. 2022 — ene. 2025 · 2 años y 8 meses',
+      lugar: 'Madrid',
+      tareas: [],
+      aptitudes: [],
+    },
+    {
+      puesto: 'Técnico de telemarketing',
+      empresa: 'Intelcia',
+      fecha: 'nov. 2021 — feb. 2022 · 3 meses',
+      lugar: '',
+      tareas: [
+        'Bases de datos de clientes y precisión de la información en el CRM.',
+        'Seguimiento y procesamiento de clientes, buscando dónde el flujo perdía tiempo.',
+      ],
+      aptitudes: ['CRM', 'Datos', 'Procesos'],
+    },
+    {
+      puesto: 'Técnico logístico',
+      empresa: 'Amazon',
+      fecha: 'abr. 2020 — feb. 2021 · 10 meses',
+      lugar: 'Getafe',
+      tareas: [],
+      aptitudes: [],
+    },
+  ] satisfies Experiencia[],
+  obra: [
+    {
+      id: 'helpdesk',
+      indice: '01',
+      nombre: 'Helpdesk Pro',
+      descripcion:
+        'Plataforma para pymes. Cada empresa abre su portal y trabaja con sus propios agentes: Leo, Mira, Sophie y Jake, uno por rol.',
+      tecnologias: ['Angular'],
+      enlace: null,
+      demo: 'https://helpdesk-pro-hybrid.netlify.app',
+      imagenes: [
+        { src: 'assets/helpdesk_sala.jpg', alt: 'Sala de agentes de Helpdesk Pro, con Leo, Mira, Sophie y Jake' },
+        { src: 'assets/helpdesk_charla.jpg', alt: 'Sophie habla con el resto de agentes en la sala de Helpdesk Pro' },
+        { src: 'assets/helpdesk_mira.jpg', alt: 'Ficha de Mira, discovery de cliente, en Helpdesk Pro' },
+        { src: 'assets/helpdesk_jake.jpg', alt: 'Ficha de Jake, canales y viabilidad, en Helpdesk Pro' },
+      ],
+    },
+    {
+      id: 'neiverhub',
+      indice: '02',
+      nombre: 'NeiverHub',
+      descripcion: 'Aplicación Android en Kotlin. Foros y comunidades.',
+      tecnologias: ['Kotlin', 'Android Studio'],
+      enlace: 'https://github.com/SergioVillaEstevez/AppNeiver',
+      imagenes: [
+        { src: 'assets/neiverhub_sesion.png', alt: 'Pantalla de inicio de sesión de NeiverHub' },
+        { src: 'assets/neiverhub_inicio.png', alt: 'Pantalla de inicio de NeiverHub' },
+        { src: 'assets/neiverhub_principal.png', alt: 'Pantalla principal de NeiverHub' },
+        { src: 'assets/neiverhub_lista.png', alt: 'Listado de NeiverHub' },
+      ],
+    },
+    {
+      id: 'padel',
+      indice: '03',
+      nombre: 'Padeleague',
+      descripcion: 'Liga fantasy de pádel. Pareja, mercado de cláusulas y clasificación.',
+      tecnologias: ['React Native', 'Expo'],
+      enlace: null,
+      demo: 'https://padeleague.netlify.app',
+      imagenes: [
+        { src: 'assets/padel_entrada.jpg', alt: 'Entrada de Padeleague, con la pista y el acceso a la liga' },
+        { src: 'assets/padel_mercado.jpg', alt: 'Mercado de fichas de Padeleague' },
+        { src: 'assets/padel_clasificacion.jpg', alt: 'Clasificación de la liga en Padeleague' },
+        { src: 'assets/padel_calendario.jpg', alt: 'Calendario de parejas en Padeleague' },
+      ],
+    },
+    {
+      id: 'iko',
+      indice: '04',
+      nombre: 'Iko Adventure',
+      descripcion: 'Juego en C# y Unity. Aventura y exploración.',
+      tecnologias: ['C#', 'Unity'],
+      enlace: null,
+      imagenes: [
+        { src: 'assets/ikoadventure_inicio.png', alt: 'Pantalla de inicio de Iko Adventure' },
+        { src: 'assets/ikoadventure_disparando.png', alt: 'Personaje disparando en Iko Adventure' },
+        { src: 'assets/ikoadventure_corriendo.png', alt: 'Personaje corriendo en Iko Adventure' },
+      ],
+    },
+    {
+      id: 'kio',
+      indice: '05',
+      nombre: 'Kio-Metroid',
+      descripcion: 'Caverna por salas de Kio Adventure, en el navegador. Portales, refugio y ruinas.',
+      tecnologias: ['Angular', 'Phaser'],
+      enlace: null,
+      demo: 'https://kio-adventure.netlify.app',
+      imagenes: [
+        { src: 'assets/kio_entrada.jpg', alt: 'Entrada de la caverna en Kio-Metroid' },
+        { src: 'assets/kio_refugio.jpg', alt: 'Plaza del refugio en Kio-Metroid' },
+        { src: 'assets/kio_ruinas.jpg', alt: 'Sala de las ruinas en Kio-Metroid' },
+        { src: 'assets/kio_bosque.jpg', alt: 'Despertar en el bosque en Kio-Metroid' },
+      ],
+    },
+    {
+      id: 'api',
+      indice: '06',
+      nombre: 'API REST',
+      descripcion: 'API en Java con Spring Boot.',
+      tecnologias: ['Java', 'Spring Boot'],
+      enlace: 'https://github.com/SergioVillaEstevez/ReservaEventos',
+      imagenes: [],
+    },
+  ] satisfies Obra[],
+  oficio: [
+    { nombre: 'Java', nivel: 85, uso: 'APIs con Spring Boot', anos: 1 },
+    { nombre: 'TypeScript', nivel: 70, uso: 'Web con Angular', anos: 1 },
+    { nombre: 'JavaScript', nivel: 70, uso: 'Web con React', anos: 1 },
+    { nombre: 'Kotlin', nivel: 70, uso: 'App Android', anos: 1 },
+    { nombre: 'C#', nivel: 60, uso: 'Videojuego 2D', anos: 1 },
+    { nombre: 'Node.js', nivel: 85, uso: 'Utilidades y APIs', anos: 1 },
+    { nombre: 'Angular', nivel: 55, uso: 'Este portfolio y webs', anos: 1 },
+    { nombre: 'React', nivel: 75, uso: 'Interfaces web', anos: 1 },
+  ] satisfies Oficio[],
+};
+
+export function etiquetaAnos(anos: number): string {
+  return anos === 1 ? '1 año' : `${anos} años`;
+}
