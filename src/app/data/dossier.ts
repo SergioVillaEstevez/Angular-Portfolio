@@ -35,7 +35,7 @@ export type Seccion = (typeof secciones)[number];
 
 export const dossier = {
   nombre: 'Sergio Villa Estévez',
-  rol: 'Automatización de procesos e integración',
+  rol: 'Automatización e integración',
   ciudad: 'Madrid',
   email: 'sergiovillaestevez@gmail.com',
   linkedin: 'https://www.linkedin.com/in/sergio-villa-est%C3%A9vez/',
@@ -48,16 +48,17 @@ export const dossier = {
   materiales: ['Angular', 'React', 'Node.js', 'Java', 'Spring Boot', 'Kotlin', 'C#', 'Unity'],
   experiencia: [
     {
-      puesto: 'Automatizador de procesos',
+      puesto: 'Automatización e integración',
       empresa: 'Sermicro',
       fecha: 'nov. 2025 — actualidad · 1 año',
       lugar: 'Madrid',
       tareas: [
+        'IA local en producción, con Ollama y n8n.',
         'Automatizaciones que parten de un parámetro, consultan una web y se quedan solo con el dato útil.',
         'Flujo de correos en .NET: estado en base de datos, respuesta por SMTP y acceso con OAuth2 en Azure.',
         'Agente para procesos internos. Lógica, herramientas externas y llamadas a APIs.',
       ],
-      aptitudes: ['.NET', 'PowerShell', 'Azure'],
+      aptitudes: ['Ollama', 'n8n', '.NET', 'PowerShell', 'Azure'],
     },
     {
       puesto: 'Node.js Developer — AI Data Analyst',
