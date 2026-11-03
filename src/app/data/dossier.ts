@@ -103,8 +103,24 @@ export const dossier = {
   ] satisfies Experiencia[],
   obra: [
     {
-      id: 'neiverhub',
+      id: 'helpdesk',
       indice: '01',
+      nombre: 'Helpdesk Pro',
+      descripcion:
+        'Plataforma para pymes. Cada empresa abre su portal y trabaja con sus propios agentes: Leo, Mira, Sophie y Jake, uno por rol.',
+      tecnologias: ['Angular'],
+      enlace: null,
+      demo: 'https://helpdesk-pro-hybrid.netlify.app',
+      imagenes: [
+        { src: 'assets/helpdesk_sala.jpg', alt: 'Sala de agentes de Helpdesk Pro, con Leo, Mira, Sophie y Jake' },
+        { src: 'assets/helpdesk_charla.jpg', alt: 'Sophie habla con el resto de agentes en la sala de Helpdesk Pro' },
+        { src: 'assets/helpdesk_mira.jpg', alt: 'Ficha de Mira, discovery de cliente, en Helpdesk Pro' },
+        { src: 'assets/helpdesk_jake.jpg', alt: 'Ficha de Jake, canales y viabilidad, en Helpdesk Pro' },
+      ],
+    },
+    {
+      id: 'neiverhub',
+      indice: '02',
       nombre: 'NeiverHub',
       descripcion: 'Aplicación Android en Kotlin. Foros y comunidades.',
       tecnologias: ['Kotlin', 'Android Studio'],
@@ -118,7 +134,7 @@ export const dossier = {
     },
     {
       id: 'padel',
-      indice: '02',
+      indice: '03',
       nombre: 'Padeleague',
       descripcion: 'Liga fantasy de pádel. Pareja, mercado de cláusulas y clasificación.',
       tecnologias: ['React Native', 'Expo'],
@@ -133,7 +149,7 @@ export const dossier = {
     },
     {
       id: 'iko',
-      indice: '03',
+      indice: '04',
       nombre: 'Iko Adventure',
       descripcion: 'Juego en C# y Unity. Aventura y exploración.',
       tecnologias: ['C#', 'Unity'],
@@ -146,7 +162,7 @@ export const dossier = {
     },
     {
       id: 'kio',
-      indice: '04',
+      indice: '05',
       nombre: 'Kio-Metroid',
       descripcion: 'Caverna por salas de Kio Adventure, en el navegador. Portales, refugio y ruinas.',
       tecnologias: ['Angular', 'Phaser'],
@@ -157,21 +173,6 @@ export const dossier = {
         { src: 'assets/kio_refugio.jpg', alt: 'Plaza del refugio en Kio-Metroid' },
         { src: 'assets/kio_ruinas.jpg', alt: 'Sala de las ruinas en Kio-Metroid' },
         { src: 'assets/kio_bosque.jpg', alt: 'Despertar en el bosque en Kio-Metroid' },
-      ],
-    },
-    {
-      id: 'helpdesk',
-      indice: '05',
-      nombre: 'Helpdesk Pro',
-      descripcion: 'Mesa de soporte multi-empresa en Angular. Tickets, calendario y fichaje.',
-      tecnologias: ['Angular'],
-      enlace: null,
-      demo: 'https://helpdesk-pro-hybrid.netlify.app',
-      imagenes: [
-        { src: 'assets/helpdesk_centro.jpg', alt: 'Centro de operaciones de Helpdesk Pro' },
-        { src: 'assets/helpdesk_tickets.jpg', alt: 'Cola de tickets abiertos de Helpdesk Pro' },
-        { src: 'assets/helpdesk_calendario.jpg', alt: 'Calendario del equipo en Helpdesk Pro' },
-        { src: 'assets/helpdesk_fichaje.jpg', alt: 'Fichaje de la jornada en Helpdesk Pro' },
       ],
     },
     {
