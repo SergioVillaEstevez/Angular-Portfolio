@@ -273,46 +273,18 @@ textarea {
 }
 
 .portrait {
-  position: relative;
   justify-self: end;
-  width: min(100%, 210px);
-  margin: 0 18px 8px 0;
-}
-
-.portrait::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 16px -16px -16px 16px;
-  background: var(--red);
+  width: min(100%, 240px);
+  margin: 0 0 8px;
 }
 
 .portrait img {
-  position: relative;
-  z-index: 1;
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 15%;
-  filter: grayscale(1) contrast(1.08);
-}
-
-.stamp {
-  position: absolute;
-  z-index: 2;
-  right: -8px;
-  bottom: 22px;
-  margin: 0;
-  padding: 2px 8px 0;
-  border: 2px solid var(--red);
-  background: var(--paper);
-  color: var(--red);
-  font-family: Anton, "Arial Narrow", Impact, sans-serif;
-  font-size: 22px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transform: rotate(-8deg);
+  object-position: center 20%;
+  border: 1px solid var(--ink);
 }
 
 .contents {
