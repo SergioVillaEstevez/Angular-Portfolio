@@ -48,10 +48,18 @@ export const dossier = {
   materiales: ['Angular', 'React', 'Node.js', 'Java', 'Spring Boot', 'Kotlin', 'C#', 'Unity'],
   experiencia: [
     {
+      puesto: 'Administrador de sistemas — Técnico de soporte IT',
+      empresa: 'Sermicro',
+      fecha: 'nov. 2025 — actualidad · 1 año',
+      lugar: 'Madrid',
+      tareas: [],
+      aptitudes: [],
+    },
+    {
       puesto: 'Node.js Developer — AI Data Analyst',
       empresa: 're-inventa',
-      fecha: 'may. 2025 — sept. 2025 · 5 meses · prácticas',
-      lugar: 'Madrid · en remoto',
+      fecha: 'may. 2025 — sept. 2025 · 4 meses',
+      lugar: 'Madrid',
       tareas: [
         'Utilidades en Node.js para generar y transformar archivos de datos usados en la validación y el entrenamiento de modelos.',
         'Prompts para modelos de lenguaje, enfocados en detectar respuestas afirmativas y negativas en conversaciones transcritas.',
@@ -61,16 +69,31 @@ export const dossier = {
       aptitudes: ['R', 'Node.js', 'JavaScript'],
     },
     {
-      puesto: 'Empleado de telemarketing',
-      empresa: 'Intelcia Spain & Latam',
-      fecha: 'nov. 2021 — feb. 2022 · 4 meses',
-      lugar: 'España',
+      puesto: 'Técnico informático — Desarrollo web y SEO',
+      empresa: 'PCBOX · KLF Informática',
+      fecha: 'may. 2022 — ene. 2025 · 2 años y 8 meses',
+      lugar: 'Madrid',
+      tareas: [],
+      aptitudes: [],
+    },
+    {
+      puesto: 'Técnico de telemarketing',
+      empresa: 'Intelcia',
+      fecha: 'nov. 2021 — feb. 2022 · 3 meses',
+      lugar: '',
       tareas: [
         'Bases de datos de clientes y precisión de la información en el CRM.',
         'Seguimiento y procesamiento de clientes, buscando dónde el flujo perdía tiempo.',
-        'Uso del CRM como la capa que sostiene lo que ve la persona al otro lado.',
       ],
       aptitudes: ['CRM', 'Datos', 'Procesos'],
+    },
+    {
+      puesto: 'Técnico logístico',
+      empresa: 'Amazon',
+      fecha: 'abr. 2020 — feb. 2021 · 10 meses',
+      lugar: 'Getafe',
+      tareas: [],
+      aptitudes: [],
     },
   ] satisfies Experiencia[],
   obra: [

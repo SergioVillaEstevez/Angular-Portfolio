@@ -101,15 +101,21 @@
             <h3>{{ job.puesto }}</h3>
             <p>{{ job.empresa }}</p>
             <p>{{ job.fecha }}</p>
-            <p class="lugar">{{ job.lugar }}</p>
+            @if (job.lugar) {
+              <p class="lugar">{{ job.lugar }}</p>
+            }
           </header>
           <div>
-            <ul>
-              @for (tarea of job.tareas; track tarea) {
-                <li>{{ tarea }}</li>
-              }
-            </ul>
-            <p class="aptitudes">{{ job.aptitudes.join(' · ') }}</p>
+            @if (job.tareas.length) {
+              <ul>
+                @for (tarea of job.tareas; track tarea) {
+                  <li>{{ tarea }}</li>
+                }
+              </ul>
+            }
+            @if (job.aptitudes.length) {
+              <p class="aptitudes">{{ job.aptitudes.join(' · ') }}</p>
+            }
           </div>
         </article>
       }
@@ -297,7 +303,9 @@
               <article class="tube-log">
                 <p class="tube-log-title">{{ job.puesto }}</p>
                 <p>{{ job.empresa }} · {{ job.fecha }}</p>
-                <p>{{ job.lugar }}</p>
+                @if (job.lugar) {
+                  <p>{{ job.lugar }}</p>
+                }
               </article>
             }
           </section>
