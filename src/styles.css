@@ -3,7 +3,7 @@
   --paper-2: #e3dfd4;
   --ink: #121212;
   --muted: #5e594e;
-  --red: #e10600;
+  --accent: #0c6e62;
   --line: rgba(18, 18, 18, 0.85);
   --header: 58px;
   color-scheme: light;
@@ -40,12 +40,12 @@ textarea {
 }
 
 ::selection {
-  background: var(--red);
+  background: var(--accent);
   color: var(--paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--red);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -132,7 +132,7 @@ textarea {
 }
 
 .brand-hint {
-  color: var(--red);
+  color: var(--accent);
   font-size: 10px;
   letter-spacing: 0.2em;
 }
@@ -142,7 +142,7 @@ textarea {
   place-items: center;
   width: 28px;
   height: 28px;
-  background: var(--red);
+  background: var(--accent);
   color: var(--paper);
   font-family: Anton, "Arial Narrow", Impact, sans-serif;
   letter-spacing: 0;
@@ -169,11 +169,11 @@ textarea {
 }
 
 .index nav a span {
-  color: var(--red);
+  color: var(--accent);
 }
 
 .index nav a.is-active {
-  box-shadow: inset 0 -2px 0 var(--red);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 .menu-btn {
@@ -202,7 +202,7 @@ textarea {
   width: 9px;
   height: 9px;
   margin-right: 8px;
-  background: var(--red);
+  background: var(--accent);
 }
 
 .portada {
@@ -284,7 +284,7 @@ textarea {
   position: absolute;
   z-index: 0;
   inset: 16px -16px -16px 16px;
-  background: var(--red);
+  background: var(--accent);
 }
 
 .portrait img {
@@ -327,7 +327,7 @@ textarea {
 .contents small {
   display: block;
   margin-bottom: 6px;
-  color: var(--red);
+  color: var(--accent);
   letter-spacing: 0.18em;
   font-size: 11px;
 }
@@ -346,7 +346,7 @@ textarea {
 
 .ticker {
   overflow: hidden;
-  background: var(--red);
+  background: var(--accent);
   color: var(--paper);
   border-bottom: 1px solid var(--ink);
 }
@@ -394,6 +394,7 @@ textarea {
 }
 
 .sheet-ink {
+  --accent: #5dcebb;
   background: var(--ink);
   color: var(--paper);
   border-bottom-color: var(--paper);
@@ -447,7 +448,7 @@ textarea {
 }
 
 .slash {
-  color: var(--red);
+  color: var(--accent);
 }
 
 .jobs {
@@ -491,7 +492,7 @@ textarea {
 }
 
 .lugar {
-  color: var(--red) !important;
+  color: var(--accent) !important;
 }
 
 .job ul {
@@ -527,7 +528,7 @@ textarea {
 
 .work-index {
   margin: 8px 0 0;
-  color: var(--red);
+  color: var(--accent);
   font-size: 13px;
   letter-spacing: 0.14em;
 }
@@ -573,14 +574,14 @@ textarea {
 .work-actions button:hover,
 .text-link:hover,
 .send:hover {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--paper);
 }
 
 .sheet-ink .work-actions button:hover,
 .sheet-ink .text-link:hover {
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .strip {
@@ -667,7 +668,7 @@ textarea {
 }
 
 .mail:hover {
-  color: var(--red);
+  color: var(--accent);
 }
 
 .direct {
@@ -685,7 +686,7 @@ textarea {
 
 .direct a {
   color: inherit;
-  box-shadow: inset 0 -1px 0 var(--red);
+  box-shadow: inset 0 -1px 0 var(--accent);
 }
 
 form label {
@@ -711,7 +712,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--accent);
 }
 
 form textarea {
