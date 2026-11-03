@@ -273,22 +273,29 @@ textarea {
 }
 
 .portrait {
+  position: relative;
   justify-self: end;
-  align-self: end;
-  width: min(100%, 380px);
-  margin: 8px 0 18px;
-  padding: 0 14px 14px 0;
-  background: linear-gradient(var(--red), var(--red)) right bottom / 78% 70% no-repeat;
+  width: min(100%, 210px);
+  margin: 0 18px 8px 0;
+}
+
+.portrait::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 16px -16px -16px 16px;
+  background: var(--red);
 }
 
 .portrait img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 14%;
-  border: 8px solid var(--ink);
-  filter: saturate(1.18) contrast(1.06);
+  object-position: center 15%;
+  filter: grayscale(1) contrast(1.08);
 }
 
 .contents {
@@ -811,23 +818,13 @@ form textarea {
   }
 
   .display {
-    grid-column: 1;
     grid-row: 2;
   }
 
-  .lede {
-    grid-column: 1;
+  .lede,
+  .portrait {
     grid-row: 3;
     align-self: end;
-  }
-
-  .portrait {
-    grid-column: 2;
-    grid-row: 2 / 4;
-    align-self: end;
-    width: 100%;
-    max-width: none;
-    margin: 0 0 16px;
   }
 
   .contents {
@@ -870,8 +867,8 @@ form textarea {
 
   .portrait {
     justify-self: start;
-    width: min(100%, 320px);
-    margin: 12px 0 20px;
+    width: min(100%, 240px);
+    margin-left: 0;
   }
 
   .contents {
